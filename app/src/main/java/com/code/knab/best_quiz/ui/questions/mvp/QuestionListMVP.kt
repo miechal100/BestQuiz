@@ -12,6 +12,7 @@ interface QuestionListMVP {
     interface View {
         fun setLoading(loading: Boolean)
         fun listLoaded(questionList: List<Question>)
+        fun handleErrorInView()
     }
 
     interface Presenter {

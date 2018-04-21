@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.util.DiffUtil
+import android.widget.Toast
 import com.code.knab.best_quiz.R
 import com.code.knab.best_quiz.network.json.Question
 import com.code.knab.best_quiz.ui.questions.dagger.QuestionListInjector
@@ -14,7 +15,7 @@ import com.code.knab.best_quiz.ui.questions.recycler.QuestionDiffResult
 import com.code.knab.best_quiz.ui.questions.recycler.QuestionListAdapter
 import javax.inject.Inject
 
-class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick<Question> {
+class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick {
     companion object {
 
         val PROJECT_KEY = "PROJECT_KEY"
@@ -25,10 +26,10 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
                 activity.startActivityForResult(this, code)
             }
         }
+
     }
     @Inject
     lateinit var presenter: QuestionListMVP.Presenter
-
     private val adapter by lazy {
         QuestionListAdapter(this)
     }
@@ -51,5 +52,9 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
     override fun listLoaded(questionList: List<Question>) {
         adapter.replaceList(questionList, DiffUtil.calculateDiff(QuestionDiffResult(adapter.list, questionList)))
+    }
+
+    override fun handleErrorInView() {
+        Toast.makeText(this, "We are very sory. There were some problems with http. Please try again later", Toast.LENGTH_SHORT).show()
     }
 }

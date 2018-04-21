@@ -11,6 +11,7 @@ interface LectureMVP {
 
     interface View {
         fun lectureLoaded(lecture: Lecture)
+        fun handleErrorInView()
     }
 
     interface Presenter {

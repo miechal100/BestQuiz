@@ -2,6 +2,7 @@ package com.code.knab.best_quiz.ui.lecture
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.code.knab.best_quiz.R
 import com.code.knab.best_quiz.network.json.Lecture
 import com.code.knab.best_quiz.ui.lecture.dagger.LectureInjector
@@ -11,7 +12,6 @@ import kotlinx.android.synthetic.main.activity_lecture.*
 import javax.inject.Inject
 
 class LectureActivity : AppCompatActivity(), LectureMVP.View {
-
     val CODE_FOR_CREATE = 123
 
     @Inject
@@ -26,5 +26,9 @@ class LectureActivity : AppCompatActivity(), LectureMVP.View {
 
     override fun lectureLoaded(lecture: Lecture) {
         QuestionListActivity.open(this, lecture.id, CODE_FOR_CREATE)
+    }
+
+    override fun handleErrorInView() {
+        Toast.makeText(this, "Wrong lecture abbreviation", Toast.LENGTH_SHORT).show()
     }
 }
