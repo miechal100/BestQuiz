@@ -10,11 +10,11 @@ interface LectureMVP {
     }
 
     interface Presenter {
-        fun loadLecture()
+        fun loadLecture(abbreviation: String)
     }
 
     interface Model {
-        fun getLecture()
+        fun getLecture(abbreviation: String)
     }
 
 }
