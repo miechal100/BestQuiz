@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/double_margin"
+    android:orientation="vertical"
+    android:padding="@dimen/double_margin"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <android.support.v7.widget.CardView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:padding="@dimen/normal_margin">
+
+        <TextView
+            android:id="@+id/vhQuestionContentTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/normal_margin"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/typ_font"
+            tools:text="Kochaj mnie miłośći daj mi znać, kocham cie lalalllaaa, a ona niekochała i zostawiła go"/>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/vhQuestionListDateAuthorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/typ_font"
+        android:textColor="@color/text_color"
+        android:textSize="@dimen/small_font"
+        android:textStyle="italic"
+        tools:text="20-01-2018 Grzegorz Brzeczyszczykiewicz"/>
+
+
+
+
+
+</LinearLayout>

@@ -13,5 +13,7 @@ class NetworkApiModule {
     @Provides
     fun provideLectureApi(retrofit: Retrofit) = retrofit.create(LectureApi::class.java)
 
+    @Provides
+    fun provideQuestionListApi(retrofit: Retrofit) = retrofit.create(QuestionListApi::class.java)
 
 }
