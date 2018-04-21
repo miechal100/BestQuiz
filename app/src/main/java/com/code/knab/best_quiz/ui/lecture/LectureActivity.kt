@@ -1,7 +1,8 @@
-package com.code.knab.best_quiz
+package com.code.knab.best_quiz.ui.lecture
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.code.knab.best_quiz.R
 
 class LectureActivity : AppCompatActivity() {
 
