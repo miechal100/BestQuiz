@@ -5,13 +5,18 @@ import android.os.Bundle
 import com.code.knab.best_quiz.R
 import com.code.knab.best_quiz.ui.lecture.dagger.LectureInjector
 import com.code.knab.best_quiz.ui.lecture.mvp.LectureMVP
+import javax.inject.Inject
 
 class LectureActivity : AppCompatActivity(), LectureMVP.View {
+
+    @Inject
+    private lateinit var presenter: LectureMVP.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lecture)
         LectureInjector().inject(this)
+        presenter.loadLecture("")
     }
 
     override fun lectureLoaded() {
