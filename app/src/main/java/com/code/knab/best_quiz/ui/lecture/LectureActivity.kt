@@ -10,7 +10,7 @@ import javax.inject.Inject
 class LectureActivity : AppCompatActivity(), LectureMVP.View {
 
     @Inject
-    private lateinit var presenter: LectureMVP.Presenter
+    lateinit var presenter: LectureMVP.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
