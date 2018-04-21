@@ -10,7 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 interface LectureMVP {
 
     interface View {
-        fun lectureLoaded()
+        fun lectureLoaded(lecture: Lecture)
     }
 
     interface Presenter {

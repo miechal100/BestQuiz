@@ -4,6 +4,8 @@ import com.code.knab.best_quiz.network.NetworkModule
 import com.code.knab.best_quiz.network.api.NetworkApiModule
 import com.code.knab.best_quiz.ui.lecture.dagger.LectureComponent
 import com.code.knab.best_quiz.ui.lecture.dagger.LectureModule
+import com.code.knab.best_quiz.ui.questions.dagger.QuestionListComponent
+import com.code.knab.best_quiz.ui.questions.dagger.QuestionListModule
 import dagger.Component
 import javax.inject.Singleton
 
@@ -15,5 +17,5 @@ import javax.inject.Singleton
 interface AppComponent {
 
     fun plus(lectureModule: LectureModule): LectureComponent
-
+    fun plus(questionListModule: QuestionListModule): QuestionListComponent
 }
