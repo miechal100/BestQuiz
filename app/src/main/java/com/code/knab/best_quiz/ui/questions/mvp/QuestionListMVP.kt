@@ -1,6 +1,7 @@
 package com.code.knab.best_quiz.ui.questions.mvp
 
 import com.code.knab.best_quiz.network.json.Question
+import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 
@@ -21,6 +22,6 @@ interface QuestionListMVP {
     }
 
     interface Model {
-        fun getQuestionList(lectureId: Int): Single<List<Question>>
+        fun getQuestionList(lectureId: Int): Observable<List<Question>>
     }
 }
