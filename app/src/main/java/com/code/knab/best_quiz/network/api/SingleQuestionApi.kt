@@ -1,6 +1,7 @@
 package com.code.knab.best_quiz.network.api
 
 import com.code.knab.best_quiz.network.json.Question
+import io.reactivex.Completable
 import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -13,8 +14,8 @@ import retrofit2.http.Path
 interface SingleQuestionApi {
 
     @POST("answer_event")
-    fun postAnswer(@Body answerId: Int): Single<Any>
+    fun postAnswer(@Body answerId: Int): Completable
 
-    @GET("question/{id}")
+    @GET("questions/{id}")
     fun getSingleQuestion(@Path("id") id: Int): Single<Question>
 }

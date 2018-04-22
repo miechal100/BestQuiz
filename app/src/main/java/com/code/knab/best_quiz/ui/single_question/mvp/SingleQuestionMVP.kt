@@ -1,6 +1,7 @@
 package com.code.knab.best_quiz.ui.single_question.mvp
 
 import com.code.knab.best_quiz.network.json.Question
+import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 
@@ -22,7 +23,7 @@ interface SingleQuestionMVP {
     }
 
     interface Model {
-        fun postAnswer(answerId: Int): Single<Any>
+        fun postAnswer(answerId: Int): Completable
         fun getQuestion(questionId: Int): Single<Question>
     }
 

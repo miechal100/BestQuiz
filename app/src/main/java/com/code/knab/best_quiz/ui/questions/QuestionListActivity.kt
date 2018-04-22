@@ -51,7 +51,6 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
         SingleQuestionActivity.open(this, question.id, CODE_FOR_CREATE)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_list)
@@ -60,7 +59,7 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
         questionsRecyclerView.layoutManager = LinearLayoutManager(this)
         questionsRecyclerView.adapter = adapter
 
-        presenter.load(11)
+        presenter.load(intent.getIntExtra(PROJECT_KEY, 0))
     }
 
     override fun setLoading(loading: Boolean) {

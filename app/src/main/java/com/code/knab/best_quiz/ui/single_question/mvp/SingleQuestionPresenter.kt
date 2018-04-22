@@ -3,6 +3,7 @@ package com.code.knab.best_quiz.ui.single_question.mvp
 import com.code.knab.best_quiz.network.json.Question
 import com.code.knab.best_quiz.utils.rx.RxUtils
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.observers.DisposableCompletableObserver
 import io.reactivex.observers.DisposableSingleObserver
 
 /**
@@ -40,8 +41,8 @@ class SingleQuestionPresenter(private val view: SingleQuestionMVP.View,
 
     }
 
-    inner class PostAnswerObserver: DisposableSingleObserver<Any>() {
-        override fun onSuccess(t: Any) {
+    inner class PostAnswerObserver: DisposableCompletableObserver() {
+        override fun onComplete() {
             view.submitCompleted()
         }
 

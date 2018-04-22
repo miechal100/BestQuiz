@@ -16,7 +16,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Tc0jbA"/>
+        android:text="F8VWxt"/>
 
     <Button
         android:id="@+id/lectureLoginButton"
