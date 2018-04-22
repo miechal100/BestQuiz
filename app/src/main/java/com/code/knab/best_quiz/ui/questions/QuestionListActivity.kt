@@ -16,11 +16,14 @@ import com.code.knab.best_quiz.ui.questions.mvp.QuestionListMVP
 import com.code.knab.best_quiz.ui.questions.recycler.ItemClick
 import com.code.knab.best_quiz.ui.questions.recycler.QuestionDiffResult
 import com.code.knab.best_quiz.ui.questions.recycler.QuestionListAdapter
+import com.code.knab.best_quiz.ui.single_question.SingleQuestionActivity
 import kotlinx.android.synthetic.main.activity_question_list.*
 import java.time.LocalDateTime
 import javax.inject.Inject
 
 class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick {
+
+    val CODE_FOR_CREATE = 123
 
     private var lectId: Int? = null
 
@@ -45,10 +48,9 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
     }
 
     override fun open(question: Question) {
-
+        SingleQuestionActivity.open(this, question.id, CODE_FOR_CREATE)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question_list)
@@ -56,8 +58,11 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
         questionsRecyclerView.layoutManager = LinearLayoutManager(this)
         questionsRecyclerView.adapter = adapter
+    }
 
-        presenter.load(11)
+    override fun onResume() {
+        super.onResume()
+        presenter.load(intent.getIntExtra(PROJECT_KEY, 0))
     }
 
     override fun setLoading(loading: Boolean) {
@@ -70,5 +75,10 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
     override fun handleErrorInView() {
         Toast.makeText(this, "We are very sory. There were some problems with http. Please try again later", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.compositeDisposal.clear()
     }
 }

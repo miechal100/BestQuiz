@@ -51,4 +51,9 @@ class LectureActivity : AppCompatActivity(), LectureMVP.View {
     override fun handleErrorInView() {
         Toast.makeText(this, "Wrong lecture abbreviation", Toast.LENGTH_SHORT).show()
     }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.compositeDisposal.clear()
+    }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.code.knab.best_quiz.ui.single_question.SingleQuestionActivity">
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textSize="17sp"
+        android:textAlignment="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"/>
+
+    <TextView
+        android:id="@+id/answerOneTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textSize="17sp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
+        app:layout_constraintTop_toBottomOf="@+id/questionTextView"/>
+
+    <TextView
+        android:id="@+id/answerTwoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textSize="17sp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
+        app:layout_constraintTop_toBottomOf="@+id/answerOneTextView"/>
+
+
+    <TextView
+        android:id="@+id/answerThreeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textSize="17sp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
+        app:layout_constraintTop_toBottomOf="@+id/answerTwoTextView"/>
+
+
+    <TextView
+        android:id="@+id/answerFourTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="20dp"
+        android:textSize="17sp"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
+        app:layout_constraintTop_toBottomOf="@+id/answerThreeTextView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/submitAnswerButton"
+        android:layout_marginEnd="@dimen/button_padding"
+        android:layout_marginBottom="@dimen/button_padding"/>
+
+</android.support.constraint.ConstraintLayout>
