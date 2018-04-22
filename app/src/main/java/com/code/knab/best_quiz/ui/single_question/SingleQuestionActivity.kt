@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.code.knab.best_quiz.R
@@ -40,6 +41,7 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
         setContentView(R.layout.activity_single_question)
         SingleQuestionInjector().inject(this)
 
+        setLoading(true)
         presenter.loadQuestion(intent.getIntExtra(PROJECT_KEY, 0))
         submitAnswerButton.isEnabled = false
         answers = listOf(answerOneTextView, answerTwoTextView, answerThreeTextView, answerFourTextView)
@@ -52,7 +54,25 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
         }
     }
 
+    private fun setLoading(b: Boolean){
+        if(b){
+            progressBar.visibility = View.VISIBLE
+            progressBar.animate()
+            answers.forEach {
+                it.visibility = View.GONE
+            }
+            questionTextView.visibility = View.GONE
+        } else {
+            progressBar.visibility = View.GONE
+            answers.forEach {
+                it.visibility = View.VISIBLE
+            }
+            questionTextView.visibility = View.VISIBLE
+        }
+    }
+
     override fun displayQuestion(question: Question) {
+        setLoading(false)
         questionTextView.text = question.content
         answerOneTextView.text = question.answers[0].content
         answerTwoTextView.text = question.answers[1].content
@@ -71,6 +91,7 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
     }
 
     override fun handleErrorInView() {
+        setLoading(false)
         Toast.makeText(this, "There were some problems with http. Please try again later.", Toast.LENGTH_SHORT).show()
         submitAnswerButton.isEnabled = true
     }
