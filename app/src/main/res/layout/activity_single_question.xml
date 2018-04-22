@@ -10,6 +10,7 @@
         android:id="@+id/questionTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="20dp"
         android:textSize="17sp"
         android:textAlignment="center"
         android:padding="@dimen/activity_horizontal_margin"
@@ -19,16 +20,17 @@
         android:id="@+id/answerOneTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/questionTextView"/>
 
-
     <TextView
         android:id="@+id/answerTwoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
@@ -39,6 +41,7 @@
         android:id="@+id/answerThreeTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
@@ -49,9 +52,19 @@
         android:id="@+id/answerFourTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/answerThreeTextView"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="@dimen/button_padding"
+        android:layout_marginBottom="@dimen/button_padding"/>
 
 </android.support.constraint.ConstraintLayout>
