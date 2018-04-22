@@ -16,11 +16,14 @@ import com.code.knab.best_quiz.ui.questions.mvp.QuestionListMVP
 import com.code.knab.best_quiz.ui.questions.recycler.ItemClick
 import com.code.knab.best_quiz.ui.questions.recycler.QuestionDiffResult
 import com.code.knab.best_quiz.ui.questions.recycler.QuestionListAdapter
+import com.code.knab.best_quiz.ui.single_question.SingleQuestionActivity
 import kotlinx.android.synthetic.main.activity_question_list.*
 import java.time.LocalDateTime
 import javax.inject.Inject
 
 class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick {
+
+    val CODE_FOR_CREATE = 123
 
     private var lectId: Int? = null
 
@@ -45,7 +48,7 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
     }
 
     override fun open(question: Question) {
-
+        SingleQuestionActivity.open(this, question.id, CODE_FOR_CREATE)
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
