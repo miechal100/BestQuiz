@@ -35,6 +35,8 @@ class LectureActivity : AppCompatActivity(), LectureMVP.View, ItemClick<Lecture>
         setContentView(R.layout.activity_lecture)
         LectureInjector().inject(this)
 
+        setTitle("Lectures")
+
         lectureRecyclerView.layoutManager = LinearLayoutManager(this)
         lectureRecyclerView.adapter = adapter
 

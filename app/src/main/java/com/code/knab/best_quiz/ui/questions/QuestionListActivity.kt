@@ -56,6 +56,7 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
         questionsRecyclerView.layoutManager = LinearLayoutManager(this)
         questionsRecyclerView.adapter = adapter
+        setTitle("Questions")
     }
 
     override fun onResume() {
