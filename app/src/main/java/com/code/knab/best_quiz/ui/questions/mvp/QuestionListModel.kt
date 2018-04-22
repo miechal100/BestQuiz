@@ -11,6 +11,6 @@ import java.util.concurrent.TimeUnit
  */
 class QuestionListModel(private val api: QuestionListApi): QuestionListMVP.Model {
     override fun getQuestionList(lectureId: Int): Observable<List<Question>> =
-            Observable.timer(30, TimeUnit.SECONDS)
+            Observable.interval(0,30, TimeUnit.SECONDS)
                     .flatMap { api.getQuestions(lectureId)}
 }

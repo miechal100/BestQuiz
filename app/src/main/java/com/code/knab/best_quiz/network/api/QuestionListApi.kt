@@ -13,7 +13,6 @@ import retrofit2.http.Query
 interface QuestionListApi {
 
     @GET("questions")
-    fun getQuestions(@Query("lectureId") lectureId: Int): Observable<List<Question>>
-
+    fun getQuestions(@Query("lectureId") lectureId: Int, @Query("published") published: Int = 1): Observable<List<Question>>
 
 }

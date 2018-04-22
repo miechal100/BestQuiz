@@ -9,7 +9,7 @@ import com.code.knab.best_quiz.ui.questions.QuestionListActivity
  */
 class QuestionListInjector: Injector<QuestionListActivity> {
     override fun inject(target: QuestionListActivity) {
-        (target.applicationContext as BestQuizApp).component.plus(QuestionListModule(target))
+        (target.applicationContext as BestQuizApp).component.plus(QuestionListModule(target)).inject(target)
     }
 
 }

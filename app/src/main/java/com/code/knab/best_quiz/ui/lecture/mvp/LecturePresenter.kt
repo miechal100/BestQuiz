@@ -16,8 +16,8 @@ class LecturePresenter(private val view: LectureMVP.View,
 
     override fun loadLecture(abbreviation: String) {
         compositeDisposal.add(model.getLecture(abbreviation)
-                .observeOn(rxUtils.observScheduler)
                 .subscribeOn(rxUtils.subscribeScheduler)
+                .observeOn(rxUtils.observScheduler)
                 .subscribeWith(LoadLectureObserver())
         )
     }

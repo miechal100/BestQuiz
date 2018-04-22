@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context="com.code.knab.best_quiz.ui.questions.QuestionListActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/questionsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/above_fab_margin"
+        android:clipToPadding="false">
+    </android.support.v7.widget.RecyclerView>
 </android.support.constraint.ConstraintLayout>

@@ -16,8 +16,8 @@ class QuestionListPresenter(private val view: QuestionListMVP.View,
 
     override fun load(lectureId: Int) {
         compositeDisposal.add(model.getQuestionList(lectureId)
-                .observeOn(rxUtils.observScheduler)
                 .subscribeOn(rxUtils.subscribeScheduler)
+                .observeOn(rxUtils.observScheduler)
                 .subscribeWith(LoadQuestionObserver()))
     }
 

@@ -1,11 +1,12 @@
 package com.code.knab.best_quiz.network.json
 
-import java.time.LocalDateTime
+import java.util.*
 
 /**
  * Created by Michał on 21.04.2018.
  */
-data class Question(val id: String,
+data class Question(val id: Int,
                     val content: String,
-                    val lecturId: Int,
-                    val createdAt: LocalDateTime)
+                    val lectureId: Int,
+                    val createdAt: Date,
+                    val answers: List<Answer>)

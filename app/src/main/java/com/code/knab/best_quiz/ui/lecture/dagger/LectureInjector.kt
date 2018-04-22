@@ -9,6 +9,6 @@ import com.code.knab.best_quiz.ui.lecture.LectureActivity
  */
 class LectureInjector: Injector<LectureActivity> {
     override fun inject(target: LectureActivity) {
-        (target.applicationContext as BestQuizApp).component.plus(LectureModule(target))
+        (target.applicationContext as BestQuizApp).component.plus(LectureModule(target)).inject(target)
     }
 }

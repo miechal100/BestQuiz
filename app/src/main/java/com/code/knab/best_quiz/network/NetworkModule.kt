@@ -25,7 +25,7 @@ class NetworkModule {
     fun provideRetrofit(gson: Gson) =
             Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl("www.google.com")
+                    .baseUrl("https://best-quiz.herokuapp.com")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(prepareOkHttpClient())
                     .build()
@@ -34,7 +34,7 @@ class NetworkModule {
     @Singleton
     fun provideGson(): Gson {
         return GsonBuilder()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
                 .create()
     }
 

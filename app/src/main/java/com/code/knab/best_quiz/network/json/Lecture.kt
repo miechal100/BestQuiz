@@ -9,6 +9,6 @@ import java.time.LocalTime
 data class Lecture (val id: Int,
                     val abbreviation: String,
                     val name: String,
-                    val day: DayOfWeek,
-                    val startDate: LocalTime,
-                    val finishDate: LocalTime)
+                    val day: Day,
+                    val startDate: Int,
+                    val finishDate: Int)
