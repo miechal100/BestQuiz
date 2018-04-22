@@ -2,7 +2,6 @@ package com.code.knab.best_quiz.ui.single_question
 
 import android.app.Activity
 import android.content.Intent
-import android.content.res.Resources
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
@@ -76,7 +75,9 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
         submitAnswerButton.isEnabled = true
     }
 
-    override fun submitCompleted() {
+    override fun submitCompleted(answeredCorrectly: Boolean) {
+        val text = if (answeredCorrectly) "Congrats! Correct answer!" else "Not this time buddy"
+        Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
         this.finish()
     }
 
