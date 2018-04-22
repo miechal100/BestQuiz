@@ -58,7 +58,10 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
         questionsRecyclerView.layoutManager = LinearLayoutManager(this)
         questionsRecyclerView.adapter = adapter
+    }
 
+    override fun onResume() {
+        super.onResume()
         presenter.load(intent.getIntExtra(PROJECT_KEY, 0))
     }
 
@@ -72,5 +75,10 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
 
     override fun handleErrorInView() {
         Toast.makeText(this, "We are very sory. There were some problems with http. Please try again later", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.compositeDisposal.clear()
     }
 }

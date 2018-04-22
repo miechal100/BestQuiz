@@ -79,4 +79,9 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
     override fun submitCompleted() {
         this.finish()
     }
+
+    override fun onStop() {
+        super.onStop()
+        presenter.compositeDisposable.clear()
+    }
 }
