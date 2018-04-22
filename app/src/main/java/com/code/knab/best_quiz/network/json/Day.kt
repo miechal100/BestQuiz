@@ -6,7 +6,7 @@ package com.code.knab.best_quiz.network.json
 enum class Day {
     MONDAY,
     TUESDAY,
-    WEDNESDEY,
+    WEDNESDAY,
     THURSDAY,
     FRIDAY,
     SATURDAY,

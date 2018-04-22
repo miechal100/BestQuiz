@@ -14,17 +14,17 @@ class LecturePresenter(private val view: LectureMVP.View,
 
     override val compositeDisposal: CompositeDisposable = CompositeDisposable()
 
-    override fun loadLecture(abbreviation: String) {
-        compositeDisposal.add(model.getLecture(abbreviation)
+    override fun loadLectures() {
+        compositeDisposal.add(model.getLectures()
                 .subscribeOn(rxUtils.subscribeScheduler)
                 .observeOn(rxUtils.observScheduler)
-                .subscribeWith(LoadLectureObserver())
+                .subscribeWith(LoadLecturesObserver())
         )
     }
 
-    inner class LoadLectureObserver: DisposableSingleObserver<Lecture>() {
-        override fun onSuccess(lecture: Lecture) {
-            view.lectureLoaded(lecture)
+    inner class LoadLecturesObserver : DisposableSingleObserver<List<Lecture>>() {
+        override fun onSuccess(lecture: List<Lecture>) {
+            view.lecturesLoaded(lecture)
         }
 
         override fun onError(e: Throwable) {

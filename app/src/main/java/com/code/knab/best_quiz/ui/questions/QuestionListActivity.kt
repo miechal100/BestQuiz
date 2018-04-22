@@ -21,11 +21,9 @@ import kotlinx.android.synthetic.main.activity_question_list.*
 import java.time.LocalDateTime
 import javax.inject.Inject
 
-class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick {
+class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClick<Question> {
 
     val CODE_FOR_CREATE = 123
-
-    private var lectId: Int? = null
 
     companion object {
 
@@ -47,8 +45,8 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
         QuestionListAdapter(this)
     }
 
-    override fun open(question: Question) {
-        SingleQuestionActivity.open(this, question.id, CODE_FOR_CREATE)
+    override fun open(t: Question) {
+        SingleQuestionActivity.open(this, t.id, CODE_FOR_CREATE)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,10 +61,6 @@ class QuestionListActivity : AppCompatActivity(), QuestionListMVP.View, ItemClic
     override fun onResume() {
         super.onResume()
         presenter.load(intent.getIntExtra(PROJECT_KEY, 0))
-    }
-
-    override fun setLoading(loading: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
     override fun listLoaded(questionList: List<Question>) {

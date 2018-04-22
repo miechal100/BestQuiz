@@ -8,7 +8,7 @@ import io.reactivex.Single
  * Created by Michał on 21.04.2018.
  */
 class LectureModel(private val api: LectureApi): LectureMVP.Model {
-    override fun getLecture(abbreviation: String): Single<Lecture> {
-        return api.getLectureByAbbreaviation(abbreviation)
+    override fun getLectures(): Single<List<Lecture>> {
+        return api.getLectures()
     }
 }

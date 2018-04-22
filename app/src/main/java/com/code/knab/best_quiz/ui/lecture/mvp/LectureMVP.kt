@@ -10,17 +10,17 @@ import io.reactivex.disposables.CompositeDisposable
 interface LectureMVP {
 
     interface View {
-        fun lectureLoaded(lecture: Lecture)
+        fun lecturesLoaded(lecturesList: List<Lecture>)
         fun handleErrorInView()
     }
 
     interface Presenter {
         val compositeDisposal: CompositeDisposable
-        fun loadLecture(abbreviation: String)
+        fun loadLectures()
     }
 
     interface Model {
-        fun getLecture(abbreviation: String): Single<Lecture>
+        fun getLectures(): Single<List<Lecture>>
     }
 
 }

@@ -11,7 +11,6 @@ import io.reactivex.disposables.CompositeDisposable
 interface QuestionListMVP {
 
     interface View {
-        fun setLoading(loading: Boolean)
         fun listLoaded(questionList: List<Question>)
         fun handleErrorInView()
     }

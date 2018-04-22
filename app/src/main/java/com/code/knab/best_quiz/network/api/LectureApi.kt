@@ -14,6 +14,6 @@ interface LectureApi {
     fun getLectures(): Single<List<Lecture>>
 
     @GET("lectures/abrev/{lectureId}")
-    fun getLectureByAbbreaviation(@Path("lectureId") id: String): Single<Lecture>
+    fun getLecturesByAbbreaviation(@Path("lectureId") id: String): Single<Lecture>
 
 }
