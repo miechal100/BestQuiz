@@ -23,6 +23,7 @@
         android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:background="?selectableItemBackground"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/questionTextView"/>
 
@@ -33,6 +34,7 @@
         android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:background="?selectableItemBackground"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/answerOneTextView"/>
 
@@ -44,6 +46,7 @@
         android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:background="?selectableItemBackground"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/answerTwoTextView"/>
 
@@ -55,6 +58,7 @@
         android:minHeight="20dp"
         android:textSize="17sp"
         android:padding="@dimen/activity_horizontal_margin"
+        android:background="?selectableItemBackground"
         android:text="tekst tekst teskt tekst teskesa;ljk f;ldskjafla;kjfasl;dfjasfksa;lfslafjas;lfa"
         app:layout_constraintTop_toBottomOf="@+id/answerThreeTextView"/>
 
@@ -62,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:background="?selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"

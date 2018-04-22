@@ -21,8 +21,10 @@
         </activity>
         <activity
             android:name=".ui.questions.QuestionListActivity"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".ui.single_question.SingleQuestionActivity"></activity>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.single_question.SingleQuestionActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
