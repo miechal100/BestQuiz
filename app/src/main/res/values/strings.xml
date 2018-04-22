@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Best-Quiz</string>
+    <string name="please_input_lecture_abbreviation">Please input lecture abbreviation</string>
+    <string name="lecture_login">LOGIN</string>
 </resources>

@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -20,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+kapt {
+    correctErrorTypes = true
 }
 
 dependencies {
@@ -47,6 +52,7 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    compileOnly "org.glassfish:javax.annotation:10.0-b28"
 
     //Retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -95,7 +101,4 @@ dependencies {
 //    androidTestImplementation "com.squareup.spoon:spoon-client:2.0.0-SNAPSHOT"
     testImplementation "android.arch.persistence.room:testing:$room_version"
     // For Spoon snapshot, until 2.0.0 is released
-    kaptAndroidTest "com.google.dagger:dagger-android:$daggerVersion"
-    kaptAndroidTest "com.google.dagger:dagger-android-processor:$daggerVersion"
-
 }

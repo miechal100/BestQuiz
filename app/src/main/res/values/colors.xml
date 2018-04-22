@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="semi_dark">#66000000</color>
+    <color name="almost_black">#091714</color>
+    <color name="charcoal_grey">#37474f</color>
+    <color name="pale_red">#db4437</color>
+    <color name="pale_red_50">#88db4437</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black_34">#56202020</color>
+    <color name="black_50">#BB000000</color>
+    <color name="black_30">#33000000</color>
+    <color name="text_color">#493b3b</color>
+    <color name="text_color2">#4d4d4d</color>
+    <color name="dark_sky_blue">#4a90e2</color>
+    <color name="grey">#fafafa</color>
+    <color name="warm_grey">#979797</color>
+    <color name="whitefafa">#fafafa</color>
+    <color name="whitef_2">#f2f2f2</color>
+    <color name="cross_color" >@color/warm_grey</color>
+    <color name="whitee6">#e6e6e6</color>
+    <color name="login_color_text">@color/white</color>
+    <color name="green_seek_bar">#00FF00</color>
+    <color name="colorPrimary">#42f47d</color>
+    <color name="colorPrimaryDark">#16e235</color>
+    <color name="colorAccent">#ef3ea8</color>
 </resources>
