@@ -78,11 +78,24 @@ class SingleQuestionActivity : AppCompatActivity(), SingleQuestionMVP.View {
     override fun submitCompleted(answeredCorrectly: Boolean) {
         val text = if (answeredCorrectly) "Congrats! Correct answer!" else "Not this time buddy"
         Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+        thread.start()
         this.finish()
     }
 
     override fun onStop() {
         super.onStop()
         presenter.compositeDisposable.clear()
+    }
+
+    var thread: Thread = object : Thread() {
+        override fun run() {
+            try {
+                Thread.sleep(2000) // As I am using LENGTH_LONG in Toast
+                this@SingleQuestionActivity.finish()
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+
+        }
     }
 }
