@@ -25,7 +25,7 @@ class NetworkModule {
     fun provideRetrofit(gson: Gson) =
             Retrofit.Builder()
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .baseUrl("https://best-quiz.herokuapp.com")
+                    .baseUrl("http://vps573803.ovh.net:8080")
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(prepareOkHttpClient())
                     .build()
